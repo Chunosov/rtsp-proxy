@@ -1,0 +1,9 @@
+LIBRARY     RTSPPROXYLIB.DLL
+
+EXPORTS
+    AppendResource                 @2   ; AppendResource
+    InitProxy                      @6   ; InitProxy
+    RemoveResource                 @1   ; RemoveResource
+    StartProxy                     @5   ; StartProxy
+    StartProxyOnPort               @4   ; StartProxyOnPort
+    StopProxy                      @3   ; StopProxy

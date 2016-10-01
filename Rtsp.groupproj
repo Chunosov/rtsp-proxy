@@ -1,0 +1,44 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{66567ff6-ba07-4808-a362-7123eaa1e3c0}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="RtspProxy.dproj" />
+    <Projects Include="RtspProxyLib.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="RtspProxy">
+    <MSBuild Projects="RtspProxy.dproj" Targets="" />
+  </Target>
+  <Target Name="RtspProxy:Clean">
+    <MSBuild Projects="RtspProxy.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="RtspProxy:Make">
+    <MSBuild Projects="RtspProxy.dproj" Targets="Make" />
+  </Target>
+  <Target Name="RtspProxyLib">
+    <MSBuild Projects="RtspProxyLib.dproj" Targets="" />
+  </Target>
+  <Target Name="RtspProxyLib:Clean">
+    <MSBuild Projects="RtspProxyLib.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="RtspProxyLib:Make">
+    <MSBuild Projects="RtspProxyLib.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="RtspProxy;RtspProxyLib" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="RtspProxy:Clean;RtspProxyLib:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="RtspProxy:Make;RtspProxyLib:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>
